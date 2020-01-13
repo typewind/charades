@@ -1,2 +1,0 @@
-# charades
-Charades game demo

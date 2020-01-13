@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Liverpool Charades</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css'>
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.6/css/all.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- our template -->
+<section id="app" class="hero is-info is-fullheight is-bold">
+<div class="hero-body">
+<div class="container has-text-centered">
+  
+  <h2 class="title is-6">{{title}}</h2>
+  
+  <div id="timer">
+    <span id="minutes">{{ minutes }}</span>
+    <span id="middle">:</span>
+    <span id="seconds">{{ seconds }}</span>
+  </div>
+
+  <div id="buttons">
+<!--     Start TImer -->
+    <button 
+      id="start" 
+      class="button is-dark is-large" 
+      v-if="!timer"
+      @click="startTimer">
+        <i class="far fa-play-circle"></i>
+    </button>
+<!--     Pause Timer -->
+    <button 
+      id="stop" 
+      class="button is-dark is-large" 
+      v-if="timer"
+      @click="stopTimer">
+        <i class="far fa-pause-circle"></i>
+    </button>
+<!--     Restart Timer -->
+    <button 
+      id="reset" 
+      class="button is-dark is-large" 
+      v-if="resetButton"
+      @click="resetTimer">
+        <i class="fas fa-undo"></i>
+    </button>
+  </div>
+  
+</div>
+</div>
+</section>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
